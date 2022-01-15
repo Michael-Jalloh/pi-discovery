@@ -6,11 +6,11 @@ server.bind(('0.0.0.0',9000))
 while 1:
 	try:
 		data, addr = server.recvfrom(1024)
-		if data == 'raspberrypi':
-			server.sendto('raspberrypi', addr)
+		if data == b'raspberrypi':
+			server.sendto(b'raspberrypi', addr)
 			break
 		else:
-			print 'Wrong client'
+			print('Wrong client')
 	except:
 		break
 
